@@ -45,6 +45,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -121,9 +127,36 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Data\ApplicationDbContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009252302290_Initial.cs" />
+    <Compile Include="Migrations\202009252302290_Initial.Designer.cs">
+      <DependentUpon>202009252302290_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009252306013_Initial1.cs" />
+    <Compile Include="Migrations\202009252306013_Initial1.Designer.cs">
+      <DependentUpon>202009252306013_Initial1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009252308429_Initial2.cs" />
+    <Compile Include="Migrations\202009252308429_Initial2.Designer.cs">
+      <DependentUpon>202009252308429_Initial2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009252309461_Initial3.cs" />
+    <Compile Include="Migrations\202009252309461_Initial3.Designer.cs">
+      <DependentUpon>202009252309461_Initial3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009252314453_Initial4.cs" />
+    <Compile Include="Migrations\202009252314453_Initial4.Designer.cs">
+      <DependentUpon>202009252314453_Initial4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Classified.cs" />
+    <Compile Include="Models\Test.cs" />
+    <Compile Include="Models\VAT.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -165,7 +198,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -179,6 +211,23 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202009252302290_Initial.resx">
+      <DependentUpon>202009252302290_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009252306013_Initial1.resx">
+      <DependentUpon>202009252306013_Initial1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009252308429_Initial2.resx">
+      <DependentUpon>202009252308429_Initial2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009252309461_Initial3.resx">
+      <DependentUpon>202009252309461_Initial3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009252314453_Initial4.resx">
+      <DependentUpon>202009252314453_Initial4.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
