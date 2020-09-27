@@ -20,5 +20,6 @@ namespace WeppApp.Data
         public DbSet<VAT> VAT { get; set; }
         public DbSet<Classified> Classified { get; set; }
         public DbSet<Category> Category { get; set; }
+        public DbSet<Turnover> Turnover { get; set; }
     }
 }

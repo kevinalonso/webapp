@@ -3,20 +3,12 @@ namespace WeppApp.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Initial4 : DbMigration
+    public partial class Initial : DbMigration
     {
         public override void Up()
         {
             CreateTable(
-                "dbo.Categories",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                    })
-                .PrimaryKey(t => t.Id);
-            
-            CreateTable(
-                "dbo.Classifieds",
+                "dbo.Turnovers",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
@@ -27,8 +19,7 @@ namespace WeppApp.Migrations
         
         public override void Down()
         {
-            DropTable("dbo.Classifieds");
-            DropTable("dbo.Categories");
+            DropTable("dbo.Turnovers");
         }
     }
 }

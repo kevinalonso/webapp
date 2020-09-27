@@ -7,13 +7,13 @@ namespace WeppApp.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class Initial1 : IMigrationMetadata
+    public sealed partial class Initial8 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Initial1));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Initial8));
         
         string IMigrationMetadata.Id
         {
-            get { return "202009252306013_Initial1"; }
+            get { return "202009272008591_Initial8"; }
         }
         
         string IMigrationMetadata.Source

@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -25,6 +26,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -131,46 +133,74 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202009252302290_Initial.cs" />
-    <Compile Include="Migrations\202009252302290_Initial.Designer.cs">
-      <DependentUpon>202009252302290_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\202009271911180_Initial.cs" />
+    <Compile Include="Migrations\202009271911180_Initial.Designer.cs">
+      <DependentUpon>202009271911180_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202009252306013_Initial1.cs" />
-    <Compile Include="Migrations\202009252306013_Initial1.Designer.cs">
-      <DependentUpon>202009252306013_Initial1.cs</DependentUpon>
+    <Compile Include="Migrations\202009271925473_Initial1.cs" />
+    <Compile Include="Migrations\202009271925473_Initial1.Designer.cs">
+      <DependentUpon>202009271925473_Initial1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202009252308429_Initial2.cs" />
-    <Compile Include="Migrations\202009252308429_Initial2.Designer.cs">
-      <DependentUpon>202009252308429_Initial2.cs</DependentUpon>
+    <Compile Include="Migrations\202009271927575_Initial2.cs" />
+    <Compile Include="Migrations\202009271927575_Initial2.Designer.cs">
+      <DependentUpon>202009271927575_Initial2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202009252309461_Initial3.cs" />
-    <Compile Include="Migrations\202009252309461_Initial3.Designer.cs">
-      <DependentUpon>202009252309461_Initial3.cs</DependentUpon>
+    <Compile Include="Migrations\202009271937166_Initial3.cs" />
+    <Compile Include="Migrations\202009271937166_Initial3.Designer.cs">
+      <DependentUpon>202009271937166_Initial3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202009252314453_Initial4.cs" />
-    <Compile Include="Migrations\202009252314453_Initial4.Designer.cs">
-      <DependentUpon>202009252314453_Initial4.cs</DependentUpon>
+    <Compile Include="Migrations\202009271940177_Initial4.cs" />
+    <Compile Include="Migrations\202009271940177_Initial4.Designer.cs">
+      <DependentUpon>202009271940177_Initial4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009271953139_Initial5.cs" />
+    <Compile Include="Migrations\202009271953139_Initial5.Designer.cs">
+      <DependentUpon>202009271953139_Initial5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009272001358_Initial6.cs" />
+    <Compile Include="Migrations\202009272001358_Initial6.Designer.cs">
+      <DependentUpon>202009272001358_Initial6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009272007310_Initial7.cs" />
+    <Compile Include="Migrations\202009272007310_Initial7.Designer.cs">
+      <DependentUpon>202009272007310_Initial7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009272008591_Initial8.cs" />
+    <Compile Include="Migrations\202009272008591_Initial8.Designer.cs">
+      <DependentUpon>202009272008591_Initial8.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Classified.cs" />
     <Compile Include="Models\Test.cs" />
+    <Compile Include="Models\Turnover.cs" />
     <Compile Include="Models\VAT.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Angular\e2e\tsconfig.e2e.json" />
+    <Content Include="Angular\.editorconfig" />
+    <Content Include="Angular\.gitignore" />
+    <Content Include="Angular\angular.json" />
+    <Content Include="Angular\package.json" />
+    <Content Include="Angular\README.md" />
+    <Content Include="Angular\src\app\app.component.html" />
+    <Content Include="Angular\src\favicon.ico" />
+    <Content Include="Angular\src\index.html" />
+    <Content Include="Angular\src\karma.conf.js" />
+    <Content Include="Angular\tsconfig.json" />
+    <Content Include="Angular\tslint.json" />
+    <Content Include="Angular\src\assets\.gitkeep" />
+    <Content Include="Angular\src\browserslist" />
+    <Content Include="Angular\src\styles.scss" />
+    <Content Include="Angular\src\tsconfig.app.json" />
+    <Content Include="Angular\src\tsconfig.spec.json" />
+    <Content Include="Angular\src\tslint.json" />
+    <Content Include="Angular\src\app\app.component.scss" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Angular\e2e\protractor.conf.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -198,6 +228,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Admin\" />
+    <Folder Include="Views\Classified\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -213,20 +245,47 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202009252302290_Initial.resx">
-      <DependentUpon>202009252302290_Initial.cs</DependentUpon>
+    <TypeScriptCompile Include="Angular\e2e\src\app.e2e-spec.ts" />
+    <TypeScriptCompile Include="Angular\e2e\src\app.po.ts" />
+    <TypeScriptCompile Include="Angular\src\app\app-routing.module.ts" />
+    <TypeScriptCompile Include="Angular\src\app\app.component.ts" />
+    <TypeScriptCompile Include="Angular\src\app\app.module.ts" />
+    <TypeScriptCompile Include="Angular\src\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="Angular\src\environments\environment.ts" />
+    <TypeScriptCompile Include="Angular\src\main.ts" />
+    <TypeScriptCompile Include="Angular\src\polyfills.ts" />
+    <TypeScriptCompile Include="Angular\src\test.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202009271911180_Initial.resx">
+      <DependentUpon>202009271911180_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009252306013_Initial1.resx">
-      <DependentUpon>202009252306013_Initial1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202009271925473_Initial1.resx">
+      <DependentUpon>202009271925473_Initial1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009252308429_Initial2.resx">
-      <DependentUpon>202009252308429_Initial2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202009271927575_Initial2.resx">
+      <DependentUpon>202009271927575_Initial2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009252309461_Initial3.resx">
-      <DependentUpon>202009252309461_Initial3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202009271937166_Initial3.resx">
+      <DependentUpon>202009271937166_Initial3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009252314453_Initial4.resx">
-      <DependentUpon>202009252314453_Initial4.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202009271940177_Initial4.resx">
+      <DependentUpon>202009271940177_Initial4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009271953139_Initial5.resx">
+      <DependentUpon>202009271953139_Initial5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009272001358_Initial6.resx">
+      <DependentUpon>202009272001358_Initial6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009272007310_Initial7.resx">
+      <DependentUpon>202009272007310_Initial7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009272008591_Initial8.resx">
+      <DependentUpon>202009272008591_Initial8.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -234,6 +293,7 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
