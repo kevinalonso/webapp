@@ -21,5 +21,6 @@ namespace WeppApp.Data
         public DbSet<Classified> Classified { get; set; }
         public DbSet<Category> Category { get; set; }
         public DbSet<Turnover> Turnover { get; set; }
+        //public DbSet<Address> Address { get; set; }
     }
 }
