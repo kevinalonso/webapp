@@ -128,7 +128,14 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DAL\AccountDAL.cs" />
+    <Compile Include="DAL\CategoryDAL.cs" />
+    <Compile Include="DAL\ClassifiedDAL.cs" />
+    <Compile Include="DAL\VatDAL.cs" />
     <Compile Include="Data\ApplicationDbContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -180,6 +187,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Angular\dist\out-tsc\e2e\src\app.e2e-spec.js" />
+    <Content Include="Angular\dist\out-tsc\e2e\src\app.po.js" />
+    <Content Include="Angular\dist\out-tsc\src\app\app-routing.module.js" />
+    <Content Include="Angular\dist\out-tsc\src\app\app.component.js" />
+    <Content Include="Angular\dist\out-tsc\src\app\app.module.js" />
+    <Content Include="Angular\dist\out-tsc\src\environments\environment.js" />
+    <Content Include="Angular\dist\out-tsc\src\environments\environment.prod.js" />
+    <Content Include="Angular\dist\out-tsc\src\main.js" />
+    <Content Include="Angular\dist\out-tsc\src\polyfills.js" />
+    <Content Include="Angular\dist\out-tsc\src\test.js" />
     <Content Include="Angular\e2e\tsconfig.e2e.json" />
     <Content Include="Angular\.editorconfig" />
     <Content Include="Angular\.gitignore" />
@@ -199,8 +216,29 @@
     <Content Include="Angular\src\tsconfig.spec.json" />
     <Content Include="Angular\src\tslint.json" />
     <Content Include="Angular\src\app\app.component.scss" />
+    <Content Include="Angular\dist\out-tsc\e2e\src\app.e2e-spec.js.map" />
+    <Content Include="Angular\dist\out-tsc\e2e\src\app.po.js.map" />
+    <Content Include="Angular\dist\out-tsc\src\app\app-routing.module.js.map" />
+    <Content Include="Angular\dist\out-tsc\src\app\app.component.js.map" />
+    <Content Include="Angular\dist\out-tsc\src\app\app.module.js.map" />
+    <Content Include="Angular\dist\out-tsc\src\environments\environment.js.map" />
+    <Content Include="Angular\dist\out-tsc\src\environments\environment.prod.js.map" />
+    <Content Include="Angular\dist\out-tsc\src\main.js.map" />
+    <Content Include="Angular\dist\out-tsc\src\polyfills.js.map" />
+    <Content Include="Angular\dist\out-tsc\src\test.js.map" />
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular-route.js" />
+    <Content Include="Scripts\angular-route.min.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Scripts\angular-route.min.js.map" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Angular\e2e\protractor.conf.js" />
+    <Content Include="Scripts\AngularController\routing.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Myapp.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -222,13 +260,13 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\About\About.cshtml" />
+    <Content Include="Views\Contact\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Admin\Admin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Admin\" />
     <Folder Include="Views\Classified\" />
   </ItemGroup>
   <ItemGroup>
