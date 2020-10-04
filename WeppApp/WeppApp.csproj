@@ -130,8 +130,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AngularDataController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="DAL\AccountDAL.cs" />
     <Compile Include="DAL\CategoryDAL.cs" />
     <Compile Include="DAL\ClassifiedDAL.cs" />
@@ -226,6 +228,7 @@
     <Content Include="Angular\dist\out-tsc\src\main.js.map" />
     <Content Include="Angular\dist\out-tsc\src\polyfills.js.map" />
     <Content Include="Angular\dist\out-tsc\src\test.js.map" />
+    <Content Include="Content\style.css" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular-route.js" />
     <Content Include="Scripts\angular-route.min.js" />
@@ -235,10 +238,8 @@
     <Content Include="Scripts\angular-route.min.js.map" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Angular\e2e\protractor.conf.js" />
-    <Content Include="Scripts\AngularController\routing.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\Myapp.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -264,9 +265,13 @@
     <Content Include="Views\Contact\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Admin\Admin.cshtml" />
+    <Content Include="Views\AngularData\Index.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Admin\Dashboard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ViewsModel\" />
     <Folder Include="Views\Classified\" />
   </ItemGroup>
   <ItemGroup>
@@ -285,7 +290,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="Angular\e2e\src\app.e2e-spec.ts" />
     <TypeScriptCompile Include="Angular\e2e\src\app.po.ts" />
-    <TypeScriptCompile Include="Angular\src\app\app-routing.module.ts" />
+    <None Include="Angular\src\app\app-routing.module.ts.old" />
     <TypeScriptCompile Include="Angular\src\app\app.component.ts" />
     <TypeScriptCompile Include="Angular\src\app\app.module.ts" />
     <TypeScriptCompile Include="Angular\src\environments\environment.prod.ts" />

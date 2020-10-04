@@ -18,6 +18,12 @@ namespace WeppApp
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "Admin",
+                url: "admin/{action}/{id}",
+                defaults: new { controller = "Admin", action = "Admin", id = UrlParameter.Optional }
+            );
         }
     }
 }

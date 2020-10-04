@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace WeppApp.Controllers
 {
-    public class AdminController : Controller
+    public class AngularDataController : Controller
     {
-        // GET: Admin
-        public ActionResult Admin()
+        // GET: AngularData
+        public ActionResult Index()
         {
             return View();
         }
