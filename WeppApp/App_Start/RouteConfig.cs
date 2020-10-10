@@ -21,9 +21,23 @@ namespace WeppApp
 
             routes.MapRoute(
                 name: "Admin",
-                url: "admin/{action}/{id}",
+                url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Admin", action = "Admin", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "Dashboard",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Dashboard", action = "Dashboard", id = UrlParameter.Optional }
+            );
+
+
+
+            /*routes.MapRoute(
+                name: "Dashboard",
+                url: "admin/dashboard/{action}/{id}",
+                defaults: new { controller = "Admin", action = "Admin", id = UrlParameter.Optional }
+            );*/
         }
     }
 }

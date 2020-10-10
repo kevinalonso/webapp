@@ -57,7 +57,7 @@ namespace WeppApp.DAL
         }
 
         /// <summary>
-        /// Return all accounts
+        /// Return all VAT
         /// </summary>
         /// <returns></returns>
         public ICollection<VAT> GetVATs()

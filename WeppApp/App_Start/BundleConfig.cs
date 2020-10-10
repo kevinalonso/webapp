@@ -27,6 +27,8 @@ namespace WeppApp
                       "~/Content/site.css",
                       "~/Content/style.css"));
 
+           
+
             /*bundles.Add(new ScriptBundle("~/bundles/Angular").Include(
                 "~/bundles/AngularOutput/inline.*",
                 "~/bundles/AngularOutput/polyfills.*",

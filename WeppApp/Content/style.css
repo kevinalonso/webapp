@@ -254,3 +254,7 @@ input[type=text] {
 #icon {
     width: 60%;
 }
+
+li,.custom-scrollbar{
+    list-style : none;
+}

@@ -132,8 +132,8 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AngularDataController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="DAL\AccountDAL.cs" />
     <Compile Include="DAL\CategoryDAL.cs" />
     <Compile Include="DAL\ClassifiedDAL.cs" />
@@ -187,6 +187,7 @@
     <Compile Include="Models\Turnover.cs" />
     <Compile Include="Models\VAT.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewsModel\DashboardViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Angular\dist\out-tsc\e2e\src\app.e2e-spec.js" />
@@ -267,11 +268,10 @@
     <Content Include="Views\Admin\Admin.cshtml" />
     <Content Include="Views\AngularData\Index.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
-    <Content Include="Views\Admin\Dashboard.cshtml" />
+    <Content Include="Views\Dashboard\Dashboard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="ViewsModel\" />
     <Folder Include="Views\Classified\" />
   </ItemGroup>
   <ItemGroup>

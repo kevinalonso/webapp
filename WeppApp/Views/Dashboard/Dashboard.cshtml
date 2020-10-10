@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "Dashboard";
+}
+
+@model WeppApp.ViewModels.DashboardViewModel
+
+<h2>Dashboard</h2>
+
+<!-- Sidebar navigation -->
+<div id="slide-out" class="side-nav2 side special-color-dark">
+    <ul class="custom-scrollbar">
+        <!-- Side navigation links -->
+        <li>
+            <ul class="collapsible collapsible-accordion">
+                <li>
+                    <a class="collapsible-header waves-effect btn" href="@Url.Action("ListVat", "Dashboard")">
+                        <i class="fas fa-chevron-right"></i> Liste des différentes TVA
+                    </a>
+                </li>
+                <li>
+                    <a class="collapsible-header waves-effect btn">
+                        <i class="far fa-hand-pointer"></i>
+                        Instruction
+                    </a>
+                </li>
+                <li>
+                    <a class="collapsible-header waves-effect btn"><i class="fas fa-eye"></i> About</a>
+                </li>
+                <li>
+                    <a class="collapsible-header waves-effect btn"><i class="far fa-envelope"></i> Contact me</a>
+                </li>
+            </ul>
+        </li>
+        <!--/. Side navigation links -->
+    </ul>
+    <div class="sidenav-bg"></div>
+</div>
+<!--/. Sidebar navigation -->
+<!--Content-->
+<div class="display-data">
+
+    <table id="myTable" class="table" cellspacing="0">
+        <thead>
+            <tr>
+                @if (Model.DisplayVATs != null)
+                {
+                    foreach (var property in Model.DisplayVATs.GetType().GetGenericArguments()[0].GetProperties())
+                    {
+                        <th>@property.Name</th>
+                    }
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.DisplayVATs != null)
+            {
+                foreach (var item in Model.DisplayVATs)
+                {
+                    <tr>
+                        @foreach (var property in item.GetType().GetProperties())
+                        {
+                            <td>@property.GetValue(item)</td>
+                        }
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+
+</div>
