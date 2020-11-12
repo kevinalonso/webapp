@@ -1,8 +1,8 @@
-﻿@{
+﻿@model WeppApp.ViewModels.DashboardViewModel
+
+@{
     ViewBag.Title = "Dashboard";
 }
-
-@model WeppApp.ViewModels.DashboardViewModel
 
 <h2>Dashboard</h2>
 
@@ -14,20 +14,32 @@
             <ul class="collapsible collapsible-accordion">
                 <li>
                     <a class="collapsible-header waves-effect btn" href="@Url.Action("ListVat", "Dashboard")">
-                        <i class="fas fa-chevron-right"></i> Liste des différentes TVA
+                        <i class="fas fa-chevron-right"></i> Liste des TVA
                     </a>
                 </li>
                 <li>
-                    <a class="collapsible-header waves-effect btn">
+                    <a class="collapsible-header waves-effect btn" href="@Url.Action("AccountList", "Dashboard")">
                         <i class="far fa-hand-pointer"></i>
-                        Instruction
+                        Utilisateurs
                     </a>
                 </li>
                 <li>
-                    <a class="collapsible-header waves-effect btn"><i class="fas fa-eye"></i> About</a>
+                    <a class="collapsible-header waves-effect btn" href="@Url.Action("CategoryList", "Dashboard")">
+                        <i class="fas fa-eye"></i>
+                        Catégories
+                    </a>
                 </li>
                 <li>
-                    <a class="collapsible-header waves-effect btn"><i class="far fa-envelope"></i> Contact me</a>
+                    <a class="collapsible-header waves-effect btn" href="@Url.Action("ClassifiedList", "Dashboard")">
+                       <i class="far fa-envelope"></i>
+                       Annonces
+                    </a>
+                </li>
+                <li>
+                    <a class="collapsible-header waves-effect btn" href="@Url.Action("TurnoverDetail", "Dashboard")">
+                        <i class="far fa-envelope"></i>
+                        Chiffre d'affaire
+                    </a>
                 </li>
             </ul>
         </li>
@@ -39,32 +51,134 @@
 <!--Content-->
 <div class="display-data">
 
-    <table id="myTable" class="table" cellspacing="0">
-        <thead>
-            <tr>
+    <div class="vat @(Model.IsClickedVAT?"visible-item":"hidden-item")">
+        <table id="myTable" class="table" cellspacing="0">
+            <thead>
+                <tr>
+                    @if (Model.DisplayVATs != null)
+                    {
+                        foreach (var property in Model.DisplayVATs.GetType().GetGenericArguments()[0].GetProperties())
+                        {
+                            <th>@property.Name</th>
+                        }
+                    }
+                </tr>
+            </thead>
+            <tbody>
                 @if (Model.DisplayVATs != null)
                 {
-                    foreach (var property in Model.DisplayVATs.GetType().GetGenericArguments()[0].GetProperties())
+                    foreach (var item in Model.DisplayVATs)
                     {
-                        <th>@property.Name</th>
+                        <tr>
+                            @foreach (var property in item.GetType().GetProperties())
+                            {
+                                <td>@property.GetValue(item)</td>
+                            }
+                        </tr>
                     }
                 }
-            </tr>
-        </thead>
-        <tbody>
-            @if (Model.DisplayVATs != null)
-            {
-                foreach (var item in Model.DisplayVATs)
+            </tbody>
+        </table>
+    </div>
+
+    <div class="account @(Model.IsClickedAccount?"visible-item":"hidden-item")">
+        <table id="myTable" class="table" cellspacing="0">
+            <thead>
+                <tr>
+                    @if (Model.DisplayAccounts != null)
+                    {
+                        foreach (var property in Model.DisplayAccounts.GetType().GetGenericArguments()[0].GetProperties())
+                        {
+                            <th>@(property.CustomAttributes.Count() == 0 ? property.Name : property.CustomAttributes.FirstOrDefault().ConstructorArguments[0].Value)</th>
+                        }
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.DisplayAccounts != null)
                 {
-                    <tr>
-                        @foreach (var property in item.GetType().GetProperties())
+                    foreach (var item in Model.DisplayAccounts)
+                    {
+                <tr>
+                    @foreach (var property in item.GetType().GetProperties())
+                    {
+
+                        if (property.PropertyType.Name != "ICollection`1")
                         {
                             <td>@property.GetValue(item)</td>
                         }
-                    </tr>
+                        else
+                        {
+                            <td>0</td>
+                        }
+
+
+                    }
+                </tr>
+                    }
                 }
-            }
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="category @(Model.IsClickedCategory?"visible-item":"hidden-item")">
+        <table id="myTable" class="table" cellspacing="0">
+            <thead>
+                <tr>
+                    @if (Model.DisplayCategories != null)
+                    {
+                        foreach (var property in Model.DisplayCategories.GetType().GetGenericArguments()[0].GetProperties())
+                        {
+                            <th>@property.Name</th>
+                        }
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.DisplayCategories != null)
+                {
+                    foreach (var item in Model.DisplayCategories)
+                    {
+                        <tr>
+                            @foreach (var property in item.GetType().GetProperties())
+                            {
+                                <td>@property.GetValue(item)</td>
+                            }
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="classified @(Model.IsClickedClassiefed?"visible-item":"hidden-item")">
+        <table id="myTable" class="table" cellspacing="0">
+            <thead>
+                <tr>
+                    @if (Model.DisplayClassifieds != null)
+                    {
+                        foreach (var property in Model.DisplayClassifieds.GetType().GetGenericArguments()[0].GetProperties())
+                        {
+                            <th>@property.Name</th>
+                        }
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.DisplayClassifieds != null)
+                {
+                    foreach (var item in Model.DisplayClassifieds)
+                    {
+                        <tr>
+                            @foreach (var property in item.GetType().GetProperties())
+                            {
+                                <td>@property.GetValue(item)</td>
+                            }
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
 
 </div>

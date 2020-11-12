@@ -64,8 +64,7 @@ namespace WeppApp.DAL
         {
             ICollection<Account> accounts;
             var context = new ApplicationDbContext();
-            accounts = context.Account.ToList();
-
+            accounts = context.Account.Include(c => c.Classifieds).ToList();
             return accounts;
         }
     }
